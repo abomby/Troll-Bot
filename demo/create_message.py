@@ -1,7 +1,7 @@
 import email, base64
 from email.mime.text import MIMEText
 
-def create_message(sender, to, subject, message_text):
+def create_message(sender, to, subject, message_text, thread_Id):
   """Create a message for an email.
 
   Args:
@@ -17,4 +17,4 @@ def create_message(sender, to, subject, message_text):
   message['to'] = to
   message['from'] = sender
   message['subject'] = subject
-  return {'raw': base64.urlsafe_b64encode(message.as_string().encode()).decode()}
+  return {'raw': base64.urlsafe_b64encode(message.as_string().encode()).decode(), 'threadId': thread_Id}
