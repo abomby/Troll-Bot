@@ -63,4 +63,3 @@ user_id = 'me'
 
 message = create_message(sender, to, subject, message_text)
 send_message(service, user_id, message)
-print('poop released')
